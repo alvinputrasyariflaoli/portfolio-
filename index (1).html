@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Alvin Putra Syarif Laoli</title>
+
+<style>
+:root {
+  --primary: #2563eb;
+  --dark: #0f172a;
+  --light: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--light);
+  color: #1e293b;
+}
+
+/* ===== HERO ===== */
+header {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--dark), #020617);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* ===== SECTION ===== */
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+/* ===== TITLE ===== */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* ===== SKILLS ===== */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.skill {
+  background: #e0e7ff;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.skill:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+/* ===== SCROLL ANIMATION ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div>
+    <h1 class="reveal">Alvin Putra Syarif Laoli</h1>
+    <p class="reveal">S1 Sistem Komputer • Web Enthusiast</p>
+  </div>
+</header>
+
+<section class="reveal">
+  <h2>Tentang Saya</h2>
+  <div class="card">
+    Saya adalah lulusan S1 Sistem Komputer yang fokus pada pengembangan web
+    modern dan siap bekerja secara profesional.
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Skill</h2>
+  <div class="skills">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">Python</div>
+    <div class="skill">Git</div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Project</h2>
+  <div class="card">
+    <h3>Portfolio Website</h3>
+    <p>Website modern dengan scroll animation real-time.</p>
+  </div>
+  <div class="card">
+    <h3>Web Project</h3>
+    <p>Menggunakan HTML, CSS, dan JavaScript.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Kontak</h2>
+  <div class="card">
+    <p>Email: alvin@email.com</p>
+    <p>WhatsApp: 08xxxxxxxxxx</p>
+    <p>LinkedIn: linkedin.com/in/alvin</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Alvin Putra Syarif Laoli
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
